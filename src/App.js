@@ -1,25 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import "./styles/App.css";
+import getForecasts from "./requests/getForecasts";
+import LocationDetails from "./components/LocationDetails";
+import ForecastSummaries from "./components/ForecastSummaries";
+import SearchForm from "./components/SearchForm";
 
 function App() {
+  const [selectedDate, setSelectedDate] = useState(0);
+  const [forecasts, setForecasts] = useState([]);
+  const [location, setLocation] = useState({
+    city: null,
+    country: null,
+  });
+
+  useEffect(() => {
+    getForecasts(setSelectedDate, setForecasts, setLocation);
+  }, []);
+
+  const handleForecastSelect = (e) => {
+    setSelectedDate(parseInt(e.target.value, 10));
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <LocationDetails city={location.city} country={location.country} />
+      <SearchForm handleCitySubmit={} />
+      <ForecastSummaries
+        forecasts={forecasts}
+        handleForecastSelect={handleForecastSelect}
+      />
+    </>
   );
 }
 
