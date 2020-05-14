@@ -4,6 +4,8 @@ import WeatherIcon from "react-icons-weather";
 import ForecastSummary from "./ForecastSummary";
 
 const ForecastSummaries = ({ forecasts, handleForecastSelect }) => {
+  console.log(forecasts);
+
   return (
     <>
       {forecasts.map((forecast) => (
@@ -19,8 +21,8 @@ const ForecastSummaries = ({ forecasts, handleForecastSelect }) => {
               rotate="90"
             />
           }
-          temperature={forecast.temperature}
-          onSelect={forecast.handleForecastSelect}
+          temperature={forecast.temperature.max}
+          handleForecastSelect={handleForecastSelect}
         />
       ))}
     </>

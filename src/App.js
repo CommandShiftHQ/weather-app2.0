@@ -21,10 +21,16 @@ function App() {
     setSelectedDate(parseInt(e.target.value, 10));
   };
 
+  const handleCitySubmit = (searchQuery) => {
+    getForecasts(setSelectedDate, setForecasts, setLocation, searchQuery);
+  };
+
+  const { city, country } = location;
+
   return (
     <>
-      <LocationDetails city={location.city} country={location.country} />
-      <SearchForm handleCitySubmit={} />
+      <LocationDetails city={city} country={country} />
+      <SearchForm handleCitySubmit={handleCitySubmit} />
       <ForecastSummaries
         forecasts={forecasts}
         handleForecastSelect={handleForecastSelect}
