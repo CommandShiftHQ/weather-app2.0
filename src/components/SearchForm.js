@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 
-const SearchForm = ({ handleCitySubmit }) => {
-  const [query, setQuery] = useState("");
-
+const SearchForm = ({ handleCitySubmit, query, setQuery }) => {
   const handleInputChange = (e) => {
     setQuery(e.target.value);
   };

@@ -12,6 +12,7 @@ function App() {
     city: null,
     country: null,
   });
+  const [query, setQuery] = useState("");
 
   useEffect(() => {
     getForecasts(setSelectedDate, setForecasts, setLocation);
@@ -21,8 +22,8 @@ function App() {
     setSelectedDate(parseInt(e.target.value, 10));
   };
 
-  const handleCitySubmit = (searchQuery) => {
-    getForecasts(setSelectedDate, setForecasts, setLocation, searchQuery);
+  const handleCitySubmit = () => {
+    getForecasts(setSelectedDate, setForecasts, setLocation, query);
   };
 
   const { city, country } = location;
@@ -30,7 +31,11 @@ function App() {
   return (
     <>
       <LocationDetails city={city} country={country} />
-      <SearchForm handleCitySubmit={handleCitySubmit} />
+      <SearchForm
+        handleCitySubmit={handleCitySubmit}
+        query={query}
+        setQuery={setQuery}
+      />
       <ForecastSummaries
         forecasts={forecasts}
         handleForecastSelect={handleForecastSelect}

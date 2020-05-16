@@ -4,8 +4,6 @@ import WeatherIcon from "react-icons-weather";
 import ForecastSummary from "./ForecastSummary";
 
 const ForecastSummaries = ({ forecasts, handleForecastSelect }) => {
-  console.log(forecasts);
-
   return (
     <>
       {forecasts.map((forecast) => (
