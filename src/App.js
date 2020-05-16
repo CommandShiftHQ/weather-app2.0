@@ -4,6 +4,7 @@ import getForecasts from "./requests/getForecasts";
 import LocationDetails from "./components/LocationDetails";
 import ForecastSummaries from "./components/ForecastSummaries";
 import SearchForm from "./components/SearchForm";
+import ForecastDetails from "./components/ForecastDetails";
 
 function App() {
   const [selectedDate, setSelectedDate] = useState(0);
@@ -26,6 +27,10 @@ function App() {
     getForecasts(setSelectedDate, setForecasts, setLocation, query);
   };
 
+  const selectedForecast = forecasts.find(
+    (forecast) => forecast.date === selectedDate
+  );
+
   const { city, country } = location;
 
   return (
@@ -40,6 +45,9 @@ function App() {
         forecasts={forecasts}
         handleForecastSelect={handleForecastSelect}
       />
+      {selectedForecast && selectedForecast.length > 0 && (
+        <ForecastDetails forecast={selectedForecast} />
+      )}
     </>
   );
 }
