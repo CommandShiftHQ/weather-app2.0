@@ -45,4 +45,8 @@ const ForecastDetails = ({ forecast }) => {
   );
 };
 
+ForecastDetails.propTypes = {
+  forecast: PropTypes.object.isRequired,
+};
+
 export default ForecastDetails;

@@ -5,7 +5,7 @@ import ForecastSummary from "./ForecastSummary";
 
 const ForecastSummaries = ({ forecasts, handleForecastSelect }) => {
   return (
-    <>
+    <div className="ForecastSummaries">
       {forecasts.map((forecast) => (
         <ForecastSummary
           key={forecast.date}
@@ -23,7 +23,7 @@ const ForecastSummaries = ({ forecasts, handleForecastSelect }) => {
           handleForecastSelect={handleForecastSelect}
         />
       ))}
-    </>
+    </div>
   );
 };
 

@@ -34,7 +34,7 @@ function App() {
   const { city, country } = location;
 
   return (
-    <>
+    <div className="App">
       <LocationDetails city={city} country={country} />
       <SearchForm
         handleCitySubmit={handleCitySubmit}
@@ -45,10 +45,8 @@ function App() {
         forecasts={forecasts}
         handleForecastSelect={handleForecastSelect}
       />
-      {selectedForecast && selectedForecast.length > 0 && (
-        <ForecastDetails forecast={selectedForecast} />
-      )}
-    </>
+      {selectedForecast && <ForecastDetails forecast={selectedForecast} />}
+    </div>
   );
 }
 
