@@ -3,11 +3,9 @@ import PropTypes from "prop-types";
 
 const LocationDetails = ({ city, country }) => {
   return (
-    <>
       <h1>
         {city}, {country}
       </h1>
-    </>
   );
 };
 
