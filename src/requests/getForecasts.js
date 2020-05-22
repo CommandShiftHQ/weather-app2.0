@@ -6,32 +6,22 @@ export const getForecasts = (
   setLocation,
   searchQuery
 ) => {
+  let endpoint = `https://mcr-codes-weather.herokuapp.com/forecast`
   if (searchQuery) {
-    axios
-      .get(
-        `https://mcr-codes-weather.herokuapp.com/forecast?city=${searchQuery}`
-      )
-      .then((response) => {
-        return (
-          setSelectedDate(response.data.forecasts[0].date),
-          setForecasts(response.data.forecasts),
-          setLocation(response.data.location)
-        );
-      })
-      .catch(() => {
-        alert("No such town! Please try again");
-      });
-  } else {
-    axios
-      .get("https://mcr-codes-weather.herokuapp.com/forecast")
-      .then((response) => {
-        return (
-          setSelectedDate(response.data.forecasts[0].date),
-          setForecasts(response.data.forecasts),
-          setLocation(response.data.location)
-        );
-      });
+    endpoint = `${endpoint}?city=${searchQuery}`;
   }
+  
+  axios.get(endpoint)
+    .then((response) => {
+      return (
+        setSelectedDate(response.data.forecasts[0].date),
+        setForecasts(response.data.forecasts),
+        setLocation(response.data.location)
+      );
+  })
+  .catch(() => {
+    alert("No such town! Please try again");
+  });
 };
 
 export default getForecasts;
