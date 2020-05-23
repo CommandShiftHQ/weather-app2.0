@@ -24,7 +24,9 @@ function App() {
   };
 
   const handleCitySubmit = () => {
-    getForecasts(setSelectedDate, setForecasts, setLocation, query);
+    getForecasts(setSelectedDate, query).then(response => {
+      // use setState functions here, instead of injecting them into the service layer
+    })
   };
 
   const selectedForecast = forecasts.find(
