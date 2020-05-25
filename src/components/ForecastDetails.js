@@ -7,39 +7,20 @@ const ForecastDetails = ({ forecast }) => {
   const { date, icon, temperature, wind, humidity } = forecast;
   return (
     <>
-      <div className="big-date">
-        <span>{Moment(date).format("ddd Do MMM")}</span>
-      </div>
+      <div className="big-date">{Moment(date).format("ddd Do MMM")}</div>
       <br />
-      <div className="big-icon">
-        <span>
-          {
-            <WeatherIcon
-              name="owm"
-              iconId={icon}
-              flip="horizontal"
-              rotate="90"
-            />
-          }
-        </span>
+      <div className="big-icon" data-testid="test-icon">
+        {<WeatherIcon name="owm" iconId={icon} flip="horizontal" rotate="90" />}
       </div>
 
-      <div className="temp-max">
-        <span>Max Temperature: {temperature.max}&deg;c</span>
-      </div>
+      <div className="temp-max">Max Temperature: {temperature.max}&deg;c</div>
       <br />
-      <div className="temp-min">
-        <span>Min Temperature: {temperature.min}&deg;c</span>
-      </div>
+      <div className="temp-min">Min Temperature: {temperature.min}&deg;c</div>
       <br />
-      <div className="big-humidity">
-        <span>Humidity: {humidity}%</span>
-      </div>
+      <div className="big-humidity">Humidity: {humidity}%</div>
       <br />
       <div className="wind-speed">
-        <span>
-          Wind: {wind.speed}mph {<i className={"wi wi-towards-nne"} />}
-        </span>
+        Wind: {wind.speed}mph {<i className={"wi wi-towards-nne"} />}
       </div>
     </>
   );
