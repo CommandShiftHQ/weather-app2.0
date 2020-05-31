@@ -5,9 +5,7 @@ exports[`App renders correctly 1`] = `
   <div
     class="App"
   >
-    <h1
-      class="location"
-    >
+    <h1>
       , 
     </h1>
     <input

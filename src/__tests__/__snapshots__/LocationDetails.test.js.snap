@@ -2,9 +2,7 @@
 
 exports[`LocationDetails renders correctly 1`] = `
 <DocumentFragment>
-  <h1
-    class="location"
-  >
+  <h1>
     Manchester, UK
   </h1>
 </DocumentFragment>

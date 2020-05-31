@@ -11,14 +11,7 @@ const ForecastSummaries = ({ forecasts, handleForecastSelect }) => {
           key={forecast.date}
           date={forecast.date}
           description={forecast.description}
-          icon={
-            <WeatherIcon
-              name="owm"
-              iconId={forecast.icon}
-              flip="horizontal"
-              rotate="90"
-            />
-          }
+          icon={forecast.icon}
           temperature={forecast.temperature.max}
           handleForecastSelect={handleForecastSelect}
         />
@@ -29,7 +22,7 @@ const ForecastSummaries = ({ forecasts, handleForecastSelect }) => {
 
 ForecastSummaries.propTypes = {
   forecasts: PropTypes.array.isRequired,
-  handleForecastSelect: PropTypes.func.isRequired,
+  // handleForecastSelect: PropTypes.func.isRequired,
 };
 
 export default ForecastSummaries;
