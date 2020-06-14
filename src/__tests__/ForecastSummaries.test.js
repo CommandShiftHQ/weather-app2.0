@@ -1,5 +1,5 @@
 import React from "react";
-import { cleanup, render, findByTestId } from "@testing-library/react";
+import { cleanup, render } from "@testing-library/react";
 import ForecastSummaries from "../components/ForecastSummaries";
 
 afterEach(cleanup);

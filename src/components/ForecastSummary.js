@@ -1,5 +1,4 @@
 import React from "react";
-import moment from "moment";
 import PropTypes from "prop-types";
 
 const ForecastSummary = ({
@@ -37,7 +36,6 @@ ForecastSummary.propTypes = {
     description: PropTypes.string.isRequired,
     icon: PropTypes.object.isRequired,
   }),
-  // handleForecastSelect: PropTypes.func.isRequired,
 };
 
 export default ForecastSummary;
