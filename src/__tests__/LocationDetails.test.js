@@ -1,8 +1,6 @@
 import React from "react";
-import { render, cleanup } from "@testing-library/react";
+import { render } from "@testing-library/react";
 import LocationDetails from "../components/LocationDetails";
-
-afterEach(cleanup);
 
 describe("LocationDetails", () => {
   const { asFragment } = render(
