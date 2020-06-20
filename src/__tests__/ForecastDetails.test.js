@@ -1,8 +1,6 @@
 import React from "react";
-import { cleanup, render } from "@testing-library/react";
+import { render } from "@testing-library/react";
 import ForecastDetails from "../components/ForecastDetails";
-
-afterEach(cleanup);
 
 describe("ForecastDetails", () => {
   const mockForecast = {
