@@ -16,7 +16,7 @@ describe("ForecastDetails", () => {
   it("renders correctly", () => {
     const { asFragment } = render(<ForecastDetails forecast={mockForecast} />);
 
-    expect(asFragment).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it("renders the correct city and location props", () => {

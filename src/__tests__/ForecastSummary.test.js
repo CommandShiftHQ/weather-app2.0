@@ -15,7 +15,7 @@ describe("ForecastSummary", () => {
       />
     );
 
-    expect(asFragment).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it("renders the correct props", () => {

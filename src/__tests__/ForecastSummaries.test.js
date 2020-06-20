@@ -27,7 +27,7 @@ describe("ForecastSummaries", () => {
   it("renders the correct amount of ForecastSummary components", () => {
     const { asFragment } = render(<ForecastSummaries forecasts={forecasts} />);
 
-    expect(asFragment).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it("renders the correct amount of ForecastSummary component props", () => {

@@ -1,3 +1,47 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ForecastDetails renders correctly 1`] = `[Function]`;
+exports[`ForecastDetails renders correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="big-date"
+  >
+    Mon 25th May
+  </div>
+  <br />
+  <div
+    class="big-icon"
+    data-testid="test-icon"
+  >
+    <i
+      class="wi wi-day-sunny wi-flip-horizontal wi-rotate-90"
+      name="owm"
+    />
+  </div>
+  <div
+    class="temp-max"
+  >
+    Max Temperature: 22°c
+  </div>
+  <br />
+  <div
+    class="temp-min"
+  >
+    Min Temperature: 21°c
+  </div>
+  <br />
+  <div
+    class="big-humidity"
+  >
+    Humidity: 32%
+  </div>
+  <br />
+  <div
+    class="wind-speed"
+  >
+    Wind: 4mph 
+    <i
+      class="wi wi-towards-nne"
+    />
+  </div>
+</DocumentFragment>
+`;
